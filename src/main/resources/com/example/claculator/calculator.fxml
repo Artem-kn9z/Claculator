@@ -20,26 +20,16 @@
    <top>
       <VBox prefHeight="55.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar>
+            <MenuBar prefHeight="14.0" prefWidth="372.0">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
               </menus>
             </MenuBar>
-            <TextField fx:id="countingPlace" alignment="CENTER_RIGHT" blendMode="COLOR_DODGE" focusTraversable="false" prefHeight="20.0" prefWidth="362.0" promptText="0" style="-fx-background-color: #696969;">
+            <TextField fx:id="countingPlace" alignment="CENTER_RIGHT" blendMode="COLOR_DODGE" editable="false" focusTraversable="false" prefHeight="20.0" prefWidth="362.0" promptText="0" style="-fx-background-color: #696969;">
                <font>
                   <Font name="Symbol" size="21.0" />
                </font>
