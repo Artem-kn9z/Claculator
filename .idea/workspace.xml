@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4a5db1a-a02c-4b31-a1da-f722c1b6cb82" name="Changes" comment="Added some backend(counting and poorly functioning FileWriter).">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/claculator/TextFieldValidation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/claculator/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/claculator/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programFiles/AccountHistory" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programFiles/AccountHistory" afterDir="false" />
@@ -95,6 +94,14 @@
       <workItem from="1678444664749" duration="18000" />
       <workItem from="1680079389107" duration="12000" />
     </task>
+    <task id="LOCAL-00001" summary="Added some backend(counting and poorly functioning FileWriter).">
+      <created>1680081918886</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680081918886</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,16 +133,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added some backend(counting and poorly functioning FileWriter)." />
     <option name="LAST_COMMIT_MESSAGE" value="Added some backend(counting and poorly functioning FileWriter)." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/claculator/Calculator.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

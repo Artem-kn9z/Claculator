@@ -1,39 +1,28 @@
 package com.example.claculator;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Calculator {
 
     private double equalNumber = 0;
+    private  int maxLenght = 9;
+    private int operator = -1;
     @FXML
     private TextField countingPlace;
-    private int operator = -1;
 
     @FXML
-    void delete() {
+    void delete() {                                                                                  //Delete all number
         countingPlace.deleteText(0,countingPlace.getText().length());
+
     }
 
     @FXML
-    void deleteOneNumber() {
-
-        if(countingPlace.getText().length()!=0)
+    void deleteOneNumber() {                                                        //Delete one character from a number
+        if(countingPlace.getText().length()==0){return;}
         countingPlace.deleteText(countingPlace.getText().length()-1,countingPlace.getText().length());
-//        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-//                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-//        {
-//            writer.write("");
-//            writer.flush();
-//        }
-//        catch(IOException ex){
-//            System.out.println(ex.getMessage());
-//        }
     }
 
     @FXML
@@ -43,15 +32,6 @@ public class Calculator {
         }
         if(countingPlace.getText().indexOf(".") == -1){
         countingPlace.appendText(".");
-            try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                    "\\src\\main\\java\\programFiles\\AccountHistory", true))
-            {
-                writer.append('.');
-                writer.flush();
-            }
-            catch(IOException ex){
-                System.out.println(ex.getMessage());
-            }
         }
     }
 
@@ -81,17 +61,9 @@ public class Calculator {
         //countingPlace.deleteText(0,countingPlace.getText().length());
         countingPlace.setText(String.valueOf(rez));
         operator = -1;
-
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.write(" = " + rez + "\n");
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
+
+////////////////////////////////////////initialization of math expression///////////////////////////////////////////////
 
     @FXML
     void plus() {
@@ -107,15 +79,6 @@ public class Calculator {
         if(countingPlace.getText().length() == 0){return;}                             // if coutingPlace clear - return
         equalNumber = Double.parseDouble(countingPlace.getText());
         countingPlace.deleteText(0,countingPlace.getText().length());
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.write(" - ");
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
@@ -124,15 +87,6 @@ public class Calculator {
         if(countingPlace.getText().length() == 0){return;}                             // if coutingPlace clear - return
         equalNumber = Double.parseDouble(countingPlace.getText());
         countingPlace.deleteText(0,countingPlace.getText().length());
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.write(" * ");
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
@@ -141,159 +95,71 @@ public class Calculator {
         if(countingPlace.getText().length() == 0){return;}                             // if coutingPlace clear - return
         equalNumber = Double.parseDouble(countingPlace.getText());
         countingPlace.deleteText(0,countingPlace.getText().length());
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.write(" / ");
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
+
+    ////////////////////////////////////////////////number initialization///////////////////////////////////////////////
 
     @FXML
     void number0() {
-        if(countingPlace.getText().length() <= 0){
+        if(countingPlace.getText().length() <= 0 || countingPlace.getText().length() <= maxLenght){
         countingPlace.appendText("0");
-            try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                    "\\src\\main\\java\\programFiles\\AccountHistory", true))
-            {
-                writer.append('0');
-                writer.flush();
-            }
-            catch(IOException ex){
-                System.out.println(ex.getMessage());
-            }
         }
     }
 
     @FXML
     void number1() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("1");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('1');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number2() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("2");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('2');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number3() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("3");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('3');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number4() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("4");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('4');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number5() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("5");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('5');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number6() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("6");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('6');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number7() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("7");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('7');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number8() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("8");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('8');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     @FXML
     void number9() {
+        if(countingPlace.getText().length() > maxLenght){return;}
         countingPlace.appendText("9");
-        try(FileWriter writer = new FileWriter("C:\\Users\\pupok\\IdeaProjects\\Claculator" +
-                "\\src\\main\\java\\programFiles\\AccountHistory", true))
-        {
-            writer.append('9');
-            writer.flush();
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
-
     public void inizialize(){
+
     }
 }
