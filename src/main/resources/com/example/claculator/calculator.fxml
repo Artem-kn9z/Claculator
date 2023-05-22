@@ -27,7 +27,7 @@
                   <items>
                     <MenuItem mnemonicParsing="false">
                            <graphic>
-                              <CheckBox mnemonicParsing="false" selected="true" text="Black mod" />
+                              <CheckBox fx:id="BlackWhite" mnemonicParsing="false" onAction="#BlackWhite" selected="true" text="Black mod" />
                            </graphic></MenuItem>
                   </items>
                 </Menu>

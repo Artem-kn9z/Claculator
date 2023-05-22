@@ -1,7 +1,9 @@
 package com.example.claculator;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.CheckBox;
 
 import java.io.*;
 
@@ -10,8 +12,95 @@ public class Calculator {
     private double equalNumber = 0;
     private  int maxLenght = 9;
     private int operator = -1;
+
+    @FXML
+    private CheckBox BlackWhite;
+
     @FXML
     private TextField countingPlace;
+
+    @FXML
+    private Button delete;
+
+    @FXML
+    private Button deleteOneNumber;
+
+    @FXML
+    private Button divison;
+
+    @FXML
+    private Button dot;
+
+    @FXML
+    private Button equals;
+
+    @FXML
+    private Button minus;
+
+    @FXML
+    private Button multiply;
+
+    @FXML
+    private Button number0;
+
+    @FXML
+    private Button number1;
+
+    @FXML
+    private Button number2;
+
+    @FXML
+    private Button number3;
+
+    @FXML
+    private Button number4;
+
+    @FXML
+    private Button number5;
+
+    @FXML
+    private Button number6;
+
+    @FXML
+    private Button number7;
+
+    @FXML
+    private Button number8;
+
+    @FXML
+    private Button number9;
+
+    @FXML
+    private Button plus;
+
+    private void changeBackgroundColor(){
+        countingPlace.setStyle("-fx-background-color: #FFFFFF;");
+        delete.setStyle("-fx-background-color: #FFFFFF;");
+        deleteOneNumber.setStyle("-fx-background-color: #FFFFFF;");
+        plus.setStyle("-fx-background-color: #FFFFFF;");
+        minus.setStyle("-fx-background-color: #FFFFFF;");
+        divison.setStyle("-fx-background-color: #FFFFFF;");
+        equals.setStyle("-fx-background-color: #FFFFFF;");
+        multiply.setStyle("-fx-background-color: #FFFFFF;");
+        dot.setStyle("-fx-background-color: #FFFFFF;");
+        number1.setStyle("-fx-background-color: #FFFFFF;");
+        number2.setStyle("-fx-background-color: #FFFFFF;");
+        number3.setStyle("-fx-background-color: #FFFFFF;");
+        number4.setStyle("-fx-background-color: #FFFFFF;");
+        number5.setStyle("-fx-background-color: #FFFFFF;");
+        number6.setStyle("-fx-background-color: #FFFFFF;");
+        number7.setStyle("-fx-background-color: #FFFFFF;");
+        number8.setStyle("-fx-background-color: #FFFFFF;");
+        number9.setStyle("-fx-background-color: #FFFFFF;");
+        number0.setStyle("-fx-background-color: #FFFFFF;");
+    }
+
+    @FXML
+    void BlackWhite() {
+        if(plus.getStyle() != "-fx-background-color: #FFFFFF;"){
+            changeBackgroundColor();
+        }else return;
+    }
 
     @FXML
     void delete() {                                                                                  //Delete all number
