@@ -5,12 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.CheckBox;
 
-import java.io.*;
 
 public class Calculator {
 
     private double equalNumber = 0;
-    private  int maxLenght = 9;
+    private final int Lenght = 9;
     private int operator = -1;
 
     @FXML
@@ -73,33 +72,35 @@ public class Calculator {
     @FXML
     private Button plus;
 
-    private void changeBackgroundColor(){
-        countingPlace.setStyle("-fx-background-color: #FFFFFF;");
-        delete.setStyle("-fx-background-color: #FFFFFF;");
-        deleteOneNumber.setStyle("-fx-background-color: #FFFFFF;");
-        plus.setStyle("-fx-background-color: #FFFFFF;");
-        minus.setStyle("-fx-background-color: #FFFFFF;");
-        divison.setStyle("-fx-background-color: #FFFFFF;");
-        equals.setStyle("-fx-background-color: #FFFFFF;");
-        multiply.setStyle("-fx-background-color: #FFFFFF;");
-        dot.setStyle("-fx-background-color: #FFFFFF;");
-        number1.setStyle("-fx-background-color: #FFFFFF;");
-        number2.setStyle("-fx-background-color: #FFFFFF;");
-        number3.setStyle("-fx-background-color: #FFFFFF;");
-        number4.setStyle("-fx-background-color: #FFFFFF;");
-        number5.setStyle("-fx-background-color: #FFFFFF;");
-        number6.setStyle("-fx-background-color: #FFFFFF;");
-        number7.setStyle("-fx-background-color: #FFFFFF;");
-        number8.setStyle("-fx-background-color: #FFFFFF;");
-        number9.setStyle("-fx-background-color: #FFFFFF;");
-        number0.setStyle("-fx-background-color: #FFFFFF;");
+    private void changeBackgroundColor(String color){
+        countingPlace.setStyle("-fx-background-color: " + color + ";");
+        delete.setStyle("-fx-background-color: " + color + ";");
+        deleteOneNumber.setStyle("-fx-background-color: " + color + ";");
+        plus.setStyle("-fx-background-color: " + color + ";");
+        minus.setStyle("-fx-background-color: " + color + ";");
+        divison.setStyle("-fx-background-color: " + color + ";");
+        equals.setStyle("-fx-background-color: " + color + ";");
+        multiply.setStyle("-fx-background-color: " + color + ";");
+        dot.setStyle("-fx-background-color: " + color + ";");
+        number1.setStyle("-fx-background-color: " + color + ";");
+        number2.setStyle("-fx-background-color: " + color + ";");
+        number3.setStyle("-fx-background-color: " + color + ";");
+        number4.setStyle("-fx-background-color: " + color + ";");
+        number5.setStyle("-fx-background-color: " + color + ";");
+        number6.setStyle("-fx-background-color: " + color + ";");
+        number7.setStyle("-fx-background-color: " + color + ";");
+        number8.setStyle("-fx-background-color: " + color + ";");
+        number9.setStyle("-fx-background-color: " + color + ";");
+        number0.setStyle("-fx-background-color: " + color + ";");
     }
 
     @FXML
     void BlackWhite() {
-        if(plus.getStyle() != "-fx-background-color: #FFFFFF;"){
-            changeBackgroundColor();
-        }else return;
+        if(!BlackWhite.isSelected()){
+            changeBackgroundColor("#FFFFFF;");
+        }else if(BlackWhite.isSelected()){
+            changeBackgroundColor("#696969;");
+        }
     }
 
     @FXML
@@ -119,7 +120,7 @@ public class Calculator {
         if(countingPlace.getText().length() == 0){
             countingPlace.appendText("0.");
         }
-        if(countingPlace.getText().indexOf(".") == -1){
+        if(!countingPlace.getText().contains(".")){
         countingPlace.appendText(".");
         }
     }
@@ -130,22 +131,19 @@ public class Calculator {
             countingPlace.setText(String.valueOf(equalNumber));
             return;
         }
-        double rez = 0;
-        switch (operator){
-            case 1:             //plus
+        double rez;
+        switch (operator) {
+            case 1 ->             //plus
                     rez = equalNumber + Double.parseDouble(countingPlace.getText());
-                break;
-            case 2:             //minus
+            case 2 ->             //minus
                     rez = equalNumber - Double.parseDouble(countingPlace.getText());
-                break;
-            case 3:             //multiply
+            case 3 ->             //multiply
                     rez = equalNumber * Double.parseDouble(countingPlace.getText());
-                break;
-            case 4:             //division
+            case 4 ->             //division
                     rez = equalNumber / Double.parseDouble(countingPlace.getText());
-                break;
-            default:
-                 return;
+            default -> {
+                return;
+            }
         }
         //countingPlace.deleteText(0,countingPlace.getText().length());
         countingPlace.setText(String.valueOf(rez));
@@ -190,65 +188,62 @@ public class Calculator {
 
     @FXML
     void number0() {
-        if(countingPlace.getText().length() <= 0 || countingPlace.getText().length() <= maxLenght){
+        if(countingPlace.getText().length() == 0 || countingPlace.getText().length() <= Lenght){
         countingPlace.appendText("0");
         }
     }
 
     @FXML
     void number1() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("1");
     }
 
     @FXML
     void number2() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("2");
     }
 
     @FXML
     void number3() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("3");
     }
 
     @FXML
     void number4() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("4");
     }
 
     @FXML
     void number5() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("5");
     }
 
     @FXML
     void number6() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("6");
     }
 
     @FXML
     void number7() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("7");
     }
 
     @FXML
     void number8() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("8");
     }
 
     @FXML
     void number9() {
-        if(countingPlace.getText().length() > maxLenght){return;}
+        if(countingPlace.getText().length() > Lenght){return;}
         countingPlace.appendText("9");
-    }
-    public void inizialize(){
-
     }
 }
